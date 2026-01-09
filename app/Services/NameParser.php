@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTO\ClientDto;
+use App\DTO\HomeOwnerDto;
 
 class NameParser
 {
@@ -18,16 +18,16 @@ class NameParser
         // Shared surname - Mr and Mrs Smith
         if (preg_match("/^($this->titles)\s+and\s+($this->titles)\s+($this->lastNameRegex)$/", $normalized, $m)) {
             return [
-                new ClientDto($m[1], null, null, $m[3]),
-                new ClientDto($m[2], null, null, $m[3]),
+                new HomeOwnerDto($m[1], null, null, $m[3]),
+                new HomeOwnerDto($m[2], null, null, $m[3]),
             ];
         }
 
         // Shared surname but with first name - Dr and Mrs Joe Blogs
         if (preg_match("/^($this->titles)\s+and\s+($this->titles)\s+([A-Z][a-z]+)\s+($this->lastNameRegex)$/", $normalized, $m)) {
             return [
-                new ClientDto($m[1], $m[3], null, $m[4]),
-                new ClientDto($m[2], $m[3], null, $m[4]),
+                new HomeOwnerDto($m[1], $m[3], null, $m[4]),
+                new HomeOwnerDto($m[2], $m[3], null, $m[4]),
             ];
         }
 
@@ -37,13 +37,13 @@ class NameParser
 
             //Title + First + Last - Mr Fred Ola
             if (preg_match("/^($this->titles)\s+([A-Z][a-z]+)\s+($this->lastNameRegex)$/", $segment, $m)) {
-                $people[] = new ClientDto($m[1], $m[2], null, $m[3]);
+                $people[] = new HomeOwnerDto($m[1], $m[2], null, $m[3]);
                 continue;
             }
 
             // Title + Initial + Last  - Mr F. Fredrickson
             if (preg_match("/^($this->titles)\s+([A-Z])\.?\s+($this->lastNameRegex)$/", $segment, $m)) {
-                $people[] = new ClientDto($m[1], null, $m[2], $m[3]);
+                $people[] = new HomeOwnerDto($m[1], null, $m[2], $m[3]);
             }
         }
 

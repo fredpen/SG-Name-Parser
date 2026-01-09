@@ -2,7 +2,7 @@
 
 namespace App\DTO;
 
-final readonly class ClientDto
+final readonly class HomeOwnerDto
 {
     public function __construct(
         public string  $title,

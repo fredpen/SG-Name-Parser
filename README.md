@@ -1,7 +1,5 @@
 ### Street Group Name Parser
 
-
-
 ## Installation
 
 ##### Dependencies
@@ -41,3 +39,11 @@ Testing
 ```sh
 ./vendor/bin/pest tests/Unit/NameParserTest.php
 ```
+
+
+#### Technical Decisions
+
+I chose a console command to keep the solution simple, stateless, and easy to run with minimal set up.
+A small immutable DTO was introduced to make the parsed homeowner data explicit and type-safe,
+while regex-based parsing was used because the input format is tightly constrained and rule-driven.
+Automated Pest tests cover each known name pattern to ensure correctness.
