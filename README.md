@@ -1,11 +1,12 @@
 ### Street Group Name Parser
 
+
+
 ## Installation
 
 ##### Dependencies
 
 PHP "^8.2" and composer is required to run this project on your machine.
-
 
 ##### Clone the repo locally:
 
@@ -27,19 +28,13 @@ Install PHP dependencies:
 composer install
 ```
 
-Generate application key:
+Running the program
+
+The program can run any csv file with a valid file path, the sample file can be run using the command below
 
 ```sh
-php artisan key:generate
+php artisan parse-names resources/homeowners/examples.csv
 ```
-
-
-Running the program 
-
-```sh
-php artisan parse-names storage/app/examples.csv
-```
-
 
 Testing
 
