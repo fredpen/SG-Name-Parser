@@ -4,7 +4,7 @@
 
 ##### Dependencies
 
-Note: PHP "^8.3" is required to run this project.
+PHP "^8.2" and composer is required to run this project on your machine.
 
 
 ##### Clone the repo locally:
@@ -12,7 +12,7 @@ Note: PHP "^8.3" is required to run this project.
 Open a terminal or a git client and clone the project using the code below
 
 ```sh
-git clone https://github.com/cipdevng/ucard_core.git SG-Name-Parser
+git clone https://github.com/fredpen/SG-Name-Parser SG-Name-Parser
 ```
 
 Enter into the project directory
